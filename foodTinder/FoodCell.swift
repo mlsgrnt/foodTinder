@@ -9,9 +9,20 @@
 import UIKit
 
 class FoodCell: UICollectionViewCell {
-    @IBOutlet var foodEmojiLabel: UILabel!
+    var food: Food?
+    @IBOutlet var foodButton: UIButton!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
     
     public func configure(with food: Food) {
-        foodEmojiLabel.text = food.emoji
+        self.food = food
+        foodButton.setTitle(food.emoji, for: .normal)
+    }
+    
+    @IBAction func foodTouched(_ sender: Any) {
+        print(self.food!.name)
     }
 }

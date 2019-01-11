@@ -31,20 +31,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAx-jq-w5q">
-                                            <rect key="frame" x="11.5" y="7" width="77" height="86"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoV-Og-br2">
+                                            <rect key="frame" x="11.5" y="1" width="77" height="98"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                            <state key="normal" title="🍔"/>
+                                            <connections>
+                                                <action selector="foodTouched:" destination="78M-a6-Z90" eventType="touchUpInside" id="3rB-Lm-Uqk"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="BAx-jq-w5q" firstAttribute="centerX" secondItem="78M-a6-Z90" secondAttribute="centerX" id="1A9-Cp-wiJ"/>
-                                    <constraint firstItem="BAx-jq-w5q" firstAttribute="centerY" secondItem="78M-a6-Z90" secondAttribute="centerY" id="AdB-lS-MS5"/>
+                                    <constraint firstItem="WoV-Og-br2" firstAttribute="centerY" secondItem="78M-a6-Z90" secondAttribute="centerY" id="JPu-Cu-ftf"/>
+                                    <constraint firstItem="WoV-Og-br2" firstAttribute="centerX" secondItem="78M-a6-Z90" secondAttribute="centerX" id="XFt-7L-rZr"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="foodEmojiLabel" destination="BAx-jq-w5q" id="OTU-NK-G6d"/>
+                                    <outlet property="foodButton" destination="WoV-Og-br2" id="kMl-Fh-EtB"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
