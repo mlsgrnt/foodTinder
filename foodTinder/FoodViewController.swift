@@ -23,7 +23,6 @@ class FoodViewController: UIViewController {
         self.food = food
         
         self.navigationItem.title = food.name
-        
     }
     
 

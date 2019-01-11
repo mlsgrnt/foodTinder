@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class InitialViewController: UICollectionViewController {
     
     var foods = [
         Food(emoji: "🍔", name: "borger"),
