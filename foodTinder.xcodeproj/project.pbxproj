@@ -15,6 +15,7 @@
 		028FA28F21E8BE250014868D /* foodTinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA28E21E8BE250014868D /* foodTinderTests.swift */; };
 		028FA29A21E8C0D70014868D /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29921E8C0D70014868D /* FoodCell.swift */; };
 		028FA29C21E8C1D00014868D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29B21E8C1D00014868D /* Food.swift */; };
+		028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29D21E8C7570014868D /* FoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		028FA29021E8BE250014868D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		028FA29921E8C0D70014868D /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		028FA29B21E8C1D00014868D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		028FA29D21E8C7570014868D /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				028FA27B21E8BE240014868D /* ViewController.swift */,
 				028FA29B21E8C1D00014868D /* Food.swift */,
 				028FA27D21E8BE240014868D /* Main.storyboard */,
+				028FA29D21E8C7570014868D /* FoodViewController.swift */,
 				028FA29921E8C0D70014868D /* FoodCell.swift */,
 				028FA28021E8BE250014868D /* Assets.xcassets */,
 				028FA28221E8BE250014868D /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 				028FA29C21E8C1D00014868D /* Food.swift in Sources */,
 				028FA29A21E8C0D70014868D /* FoodCell.swift in Sources */,
 				028FA27A21E8BE240014868D /* AppDelegate.swift in Sources */,
+				028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,8 +21,4 @@ class FoodCell: UICollectionViewCell {
         self.food = food
         foodButton.setTitle(food.emoji, for: .normal)
     }
-    
-    @IBAction func foodTouched(_ sender: Any) {
-        print(self.food!.name)
-    }
 }

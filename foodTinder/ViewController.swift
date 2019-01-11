@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UICollectionViewController {
     
     var foods = [
-        Food(emoji: "🍔", name: "burger"),
-        Food(emoji: "🥙", name: "doner"),
+        Food(emoji: "🍔", name: "borger"),
+        Food(emoji: "🥙", name: "döner"),
         Food(emoji: "🌭", name: "hot dog"),
         Food(emoji: "🍕", name: "pizza")
     ]
@@ -32,5 +32,15 @@ class ViewController: UICollectionViewController {
         cell.configure(with: foods[indexPath.item])
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sender = sender as? UIButton {
+            if let foodCell = sender.superview?.superview as? FoodCell {
+                if let foodView = segue.destination as? FoodViewController {
+                    foodView.configure(with: foodCell.food!)
+                }
+            }
+        }
     }
 }
