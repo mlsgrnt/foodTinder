@@ -73,16 +73,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fep-cr-ihH" customClass="VerticalCardSwiper" customModule="VerticalCardSwiper">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODO make this hide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcp-yu-1j7">
-                                        <rect key="frame" x="106.5" y="291" width="162.5" height="21"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No places left!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcp-yu-1j7">
+                                        <rect key="frame" x="132.5" y="291" width="110.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.72934693098068237" green="0.72945338487625122" blue="0.72932368516921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8cC-65-GLP">
+                                        <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93749982118606567" green="0.93720400333404541" blue="0.95815843343734741" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Qcp-yu-1j7" firstAttribute="centerX" secondItem="fep-cr-ihH" secondAttribute="centerX" id="D4d-qV-0UK"/>
+                                    <constraint firstItem="8cC-65-GLP" firstAttribute="centerX" secondItem="fep-cr-ihH" secondAttribute="centerX" id="Nb7-oI-vnH"/>
+                                    <constraint firstItem="8cC-65-GLP" firstAttribute="centerY" secondItem="fep-cr-ihH" secondAttribute="centerY" id="T2M-VA-FDs"/>
                                     <constraint firstItem="Qcp-yu-1j7" firstAttribute="centerY" secondItem="fep-cr-ihH" secondAttribute="centerY" id="YWE-Kq-J3Y"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -108,7 +113,9 @@
                         <viewLayoutGuide key="safeArea" id="SXB-UD-fQ7"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="8cC-65-GLP" id="MzO-FY-rpV"/>
                         <outlet property="cardSwiper" destination="fep-cr-ihH" id="xxm-OL-yce"/>
+                        <outlet property="soldOutLabel" destination="Qcp-yu-1j7" id="MYq-do-QhG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SP-UN-pHp" userLabel="First Responder" sceneMemberID="firstResponder"/>

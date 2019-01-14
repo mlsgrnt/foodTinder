@@ -53,6 +53,9 @@ class PlaceCell: CardCell {
         
         // Roll/Pitch Dynamic Shadow
         if motionManager.isDeviceMotionAvailable && !ProcessInfo.processInfo.isLowPowerModeEnabled {
+                    // Do an applyshadow immediately so the effect sin't jarring
+                    self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0))
+            
                     motionManager.deviceMotionUpdateInterval = 0.02
                     motionManager.startDeviceMotionUpdates(to: .main, withHandler: { (motion, error) in
                         if let motion = motion {

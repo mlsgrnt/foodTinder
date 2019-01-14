@@ -16,6 +16,11 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     var food: Food?
     var placesDataSource = Places()
     
+    var cardsSwipedAwayCounter = 0
+    @IBOutlet weak var soldOutLabel: UILabel!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +37,8 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         DispatchQueue.main.async {
             self.cardSwiper.datasource = self
             self.cardSwiper.reloadData()
+            
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -62,6 +69,15 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         // Allows you to return custom card sizes (optional).
         return CGSize(width: verticalCardSwiperView.frame.width, height: verticalCardSwiperView.frame.height)
     }
+    
+    func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        self.cardsSwipedAwayCounter = self.cardsSwipedAwayCounter + 1
+        if(cardsSwipedAwayCounter == self.placesDataSource.places.count) {
+            print("this bitch empty")
+            self.soldOutLabel.isHidden = false
+        }
+    }
+    
     
     /*
     // MARK: - Navigation
