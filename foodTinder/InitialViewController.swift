@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class InitialViewController: UICollectionViewController {
+class InitialViewController: UICollectionViewController, CLLocationManagerDelegate {
     
     var foods = [
         Food(emoji: "🍔", name: "borger"),
@@ -17,10 +18,19 @@ class InitialViewController: UICollectionViewController {
         Food(emoji: "🍕", name: "pizza")
     ]
 
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Request location
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestLocation()
     }
+    
+    //MARK: - CollectionView
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return foods.count
@@ -33,6 +43,23 @@ class InitialViewController: UICollectionViewController {
         
         return cell
     }
+    
+    //MARK: - Location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        Places.location = location
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        //TODO
+        print(error)
+        return
+    }
+    
+    //MARK: - Navivgation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let sender = sender as? UIButton {

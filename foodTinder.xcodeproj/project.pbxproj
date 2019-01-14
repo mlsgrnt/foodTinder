@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02177E9E21ECDE06007065FF /* VerticalCardSwiper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; };
 		02177E9F21ECDE06007065FF /* VerticalCardSwiper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02219D3621ECF0C6004C7AB0 /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02219D3521ECF0C6004C7AB0 /* PlacesDataSource.swift */; };
 		028FA27A21E8BE240014868D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA27921E8BE240014868D /* AppDelegate.swift */; };
 		028FA27C21E8BE240014868D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA27B21E8BE240014868D /* InitialViewController.swift */; };
 		028FA27F21E8BE240014868D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028FA27D21E8BE240014868D /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02219D3521ECF0C6004C7AB0 /* PlacesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
 		028FA27621E8BE240014868D /* foodTinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodTinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		028FA27921E8BE240014868D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		028FA27B21E8BE240014868D /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				028FA29D21E8C7570014868D /* FoodViewController.swift */,
 				028FA29921E8C0D70014868D /* FoodCell.swift */,
 				02B44EE021EC999E000EF36D /* PlaceCell.swift */,
+				02219D3521ECF0C6004C7AB0 /* PlacesDataSource.swift */,
 				02B44EE121EC999E000EF36D /* PlaceCell.xib */,
 				028FA28021E8BE250014868D /* Assets.xcassets */,
 				028FA28221E8BE250014868D /* LaunchScreen.storyboard */,
@@ -312,6 +315,7 @@
 			files = (
 				028FA27C21E8BE240014868D /* InitialViewController.swift in Sources */,
 				028FA29C21E8C1D00014868D /* Food.swift in Sources */,
+				02219D3621ECF0C6004C7AB0 /* PlacesDataSource.swift in Sources */,
 				028FA29A21E8C0D70014868D /* FoodCell.swift in Sources */,
 				028FA27A21E8BE240014868D /* AppDelegate.swift in Sources */,
 				028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */,

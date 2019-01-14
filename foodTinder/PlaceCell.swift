@@ -14,6 +14,7 @@ class PlaceCell: CardCell {
     
     let motionManager = CMMotionManager()
     
+    @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var whiteBox: UIView!
     private weak var shadowView: UIView?
     
@@ -24,7 +25,6 @@ class PlaceCell: CardCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.shadowConfigured = false
-
     }
     
     override func layoutSubviews() {
@@ -36,6 +36,10 @@ class PlaceCell: CardCell {
         if(!shadowConfigured) {
             configureShadow()
         }
+    }
+    
+    func configure() {
+        self.placeNameLabel.text = "\(String(describing: Places.location?.coordinate.longitude))"
     }
     
     // MARK: - Shadow

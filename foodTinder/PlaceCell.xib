@@ -86,6 +86,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="340" height="357"/>
             <connections>
+                <outlet property="placeNameLabel" destination="Ksm-6V-UcI" id="AwD-Pr-PIW"/>
                 <outlet property="whiteBox" destination="Tlp-gF-npS" id="iX6-z2-wRF"/>
             </connections>
             <point key="canvasLocation" x="344" y="266.71664167916043"/>
