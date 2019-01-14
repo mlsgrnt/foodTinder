@@ -16,6 +16,7 @@
 		028FA29A21E8C0D70014868D /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29921E8C0D70014868D /* FoodCell.swift */; };
 		028FA29C21E8C1D00014868D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29B21E8C1D00014868D /* Food.swift */; };
 		028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29D21E8C7570014868D /* FoodViewController.swift */; };
+		02B44ED521EC9732000EF36D /* VerticalCardSwiper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 028FA27521E8BE240014868D;
 			remoteInfo = foodTinder;
+		};
+		02B44ECF21EC96E0000EF36D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CE68C601F15729800CFFA14;
+			remoteInfo = Example;
+		};
+		02B44ED121EC96E0000EF36D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C51A110209E6D6900B83A82;
+			remoteInfo = VerticalCardSwiper;
+		};
+		02B44ED321EC96E0000EF36D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CAB38FA20D0074000FC4C8A;
+			remoteInfo = VerticalCardSwiperUITests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,6 +64,7 @@
 		028FA29921E8C0D70014868D /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		028FA29B21E8C1D00014868D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		028FA29D21E8C7570014868D /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VerticalCardSwiper.xcodeproj; path = VerticalCardSwiper/VerticalCardSwiper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B44ED521EC9732000EF36D /* VerticalCardSwiper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +92,7 @@
 				028FA27821E8BE240014868D /* foodTinder */,
 				028FA28D21E8BE250014868D /* foodTinderTests */,
 				028FA27721E8BE240014868D /* Products */,
+				02B44EC821EC96DF000EF36D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +128,24 @@
 				028FA29021E8BE250014868D /* Info.plist */,
 			);
 			path = foodTinderTests;
+			sourceTree = "<group>";
+		};
+		02B44EC821EC96DF000EF36D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02B44ECA21EC96E0000EF36D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02B44ED021EC96E0000EF36D /* Example.app */,
+				02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */,
+				02B44ED421EC96E0000EF36D /* VerticalCardSwiperUITests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +216,12 @@
 			mainGroup = 028FA26D21E8BE240014868D;
 			productRefGroup = 028FA27721E8BE240014868D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 02B44ECA21EC96E0000EF36D /* Products */;
+					ProjectRef = 02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				028FA27521E8BE240014868D /* foodTinder */,
@@ -180,6 +229,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		02B44ED021EC96E0000EF36D /* Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Example.app;
+			remoteRef = 02B44ECF21EC96E0000EF36D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VerticalCardSwiper.framework;
+			remoteRef = 02B44ED121EC96E0000EF36D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		02B44ED421EC96E0000EF36D /* VerticalCardSwiperUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VerticalCardSwiperUITests.xctest;
+			remoteRef = 02B44ED321EC96E0000EF36D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		028FA27421E8BE240014868D /* Resources */ = {

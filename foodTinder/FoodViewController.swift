@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VerticalCardSwiper
 
 class FoodViewController: UIViewController {
 
