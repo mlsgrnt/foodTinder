@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02177E9E21ECDE06007065FF /* VerticalCardSwiper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; };
+		02177E9F21ECDE06007065FF /* VerticalCardSwiper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		028FA27A21E8BE240014868D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA27921E8BE240014868D /* AppDelegate.swift */; };
 		028FA27C21E8BE240014868D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA27B21E8BE240014868D /* InitialViewController.swift */; };
 		028FA27F21E8BE240014868D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028FA27D21E8BE240014868D /* Main.storyboard */; };
@@ -17,9 +19,18 @@
 		028FA29C21E8C1D00014868D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29B21E8C1D00014868D /* Food.swift */; };
 		028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29D21E8C7570014868D /* FoodViewController.swift */; };
 		02B44ED521EC9732000EF36D /* VerticalCardSwiper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; };
+		02B44EE221EC999E000EF36D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B44EE021EC999E000EF36D /* PlaceCell.swift */; };
+		02B44EE321EC999E000EF36D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B44EE121EC999E000EF36D /* PlaceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		02177EA021ECDE06007065FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C51A10F209E6D6900B83A82;
+			remoteInfo = VerticalCardSwiper;
+		};
 		028FA28B21E8BE250014868D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 028FA26E21E8BE240014868D /* Project object */;
@@ -50,6 +61,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		02177EA221ECDE07007065FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02177E9F21ECDE06007065FF /* VerticalCardSwiper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		028FA27621E8BE240014868D /* foodTinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodTinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		028FA27921E8BE240014868D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +90,8 @@
 		028FA29B21E8C1D00014868D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		028FA29D21E8C7570014868D /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		02B44EC921EC96E0000EF36D /* VerticalCardSwiper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VerticalCardSwiper.xcodeproj; path = VerticalCardSwiper/VerticalCardSwiper.xcodeproj; sourceTree = "<group>"; };
+		02B44EE021EC999E000EF36D /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		02B44EE121EC999E000EF36D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02177E9E21ECDE06007065FF /* VerticalCardSwiper.framework in Frameworks */,
 				02B44ED521EC9732000EF36D /* VerticalCardSwiper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +142,8 @@
 				028FA27D21E8BE240014868D /* Main.storyboard */,
 				028FA29D21E8C7570014868D /* FoodViewController.swift */,
 				028FA29921E8C0D70014868D /* FoodCell.swift */,
+				02B44EE021EC999E000EF36D /* PlaceCell.swift */,
+				02B44EE121EC999E000EF36D /* PlaceCell.xib */,
 				028FA28021E8BE250014868D /* Assets.xcassets */,
 				028FA28221E8BE250014868D /* LaunchScreen.storyboard */,
 				028FA28521E8BE250014868D /* Info.plist */,
@@ -158,10 +188,12 @@
 				028FA27221E8BE240014868D /* Sources */,
 				028FA27321E8BE240014868D /* Frameworks */,
 				028FA27421E8BE240014868D /* Resources */,
+				02177EA221ECDE07007065FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				02177EA121ECDE06007065FF /* PBXTargetDependency */,
 			);
 			name = foodTinder;
 			productName = foodTinder;
@@ -262,6 +294,7 @@
 				028FA28421E8BE250014868D /* LaunchScreen.storyboard in Resources */,
 				028FA28121E8BE250014868D /* Assets.xcassets in Resources */,
 				028FA27F21E8BE240014868D /* Main.storyboard in Resources */,
+				02B44EE321EC999E000EF36D /* PlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +317,7 @@
 				028FA29A21E8C0D70014868D /* FoodCell.swift in Sources */,
 				028FA27A21E8BE240014868D /* AppDelegate.swift in Sources */,
 				028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */,
+				02B44EE221EC999E000EF36D /* PlaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +332,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		02177EA121ECDE06007065FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VerticalCardSwiper;
+			targetProxy = 02177EA021ECDE06007065FF /* PBXContainerItemProxy */;
+		};
 		028FA28C21E8BE250014868D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 028FA27521E8BE240014868D /* foodTinder */;
@@ -444,6 +483,7 @@
 		028FA29421E8BE250014868D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZH497CA8QC;
@@ -462,6 +502,7 @@
 		028FA29521E8BE250014868D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZH497CA8QC;

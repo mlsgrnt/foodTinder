@@ -9,15 +9,22 @@
 import UIKit
 import VerticalCardSwiper
 
-class FoodViewController: UIViewController {
+class FoodViewController: UIViewController, VerticalCardSwiperDatasource, VerticalCardSwiperDelegate {
 
-    @IBOutlet var testLabel: UILabel!
+    @IBOutlet weak var cardSwiper: VerticalCardSwiper!
+    
     var food: Food?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.testLabel.text = self.food?.emoji
         // Do any additional setup after loading the view.
+        
+        cardSwiper.datasource = self
+        cardSwiper.delegate = self
+        
+        // register cardcell for storyboard use
+        cardSwiper.register(nib: UINib(nibName: "PlaceCell", bundle: nil), forCellWithReuseIdentifier: "PlaceCell")
+
     }
     
     func configure(with food: Food) {
@@ -26,7 +33,24 @@ class FoodViewController: UIViewController {
         self.navigationItem.title = food.name
     }
     
+    func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
+        
+        let placeCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: index) as! PlaceCell
+                
+        return placeCell
+    }
+    
+    func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
+        return 100
+    }
 
+    // MARK: - VerticalCardSwiperDelegate
+    func sizeForItem(verticalCardSwiperView: VerticalCardSwiperView, index: Int) -> CGSize {
+        // Allows you to return custom card sizes (optional).
+        return CGSize(width: verticalCardSwiperView.frame.width, height: verticalCardSwiperView.frame.height * 0.85)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

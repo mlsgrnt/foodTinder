@@ -70,19 +70,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="load" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKA-xp-Bzg">
-                                <rect key="frame" x="154" y="260" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fep-cr-ihH" customClass="VerticalCardSwiper" customModule="VerticalCardSwiper">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SXB-UD-fQ7" firstAttribute="bottom" secondItem="fep-cr-ihH" secondAttribute="bottom" id="ZZn-n7-CIX"/>
+                            <constraint firstItem="fep-cr-ihH" firstAttribute="top" secondItem="SXB-UD-fQ7" secondAttribute="top" id="fKf-oc-pl2"/>
+                            <constraint firstItem="SXB-UD-fQ7" firstAttribute="trailing" secondItem="fep-cr-ihH" secondAttribute="trailing" id="mDA-0M-HqM"/>
+                            <constraint firstItem="fep-cr-ihH" firstAttribute="leading" secondItem="SXB-UD-fQ7" secondAttribute="leading" id="zUk-IC-ARO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SXB-UD-fQ7"/>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="RKA-xp-Bzg" id="6bs-ac-8d8"/>
+                        <outlet property="cardSwiper" destination="fep-cr-ihH" id="xxm-OL-yce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SP-UN-pHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
