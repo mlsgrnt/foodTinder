@@ -18,7 +18,6 @@
 		028FA29A21E8C0D70014868D /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29921E8C0D70014868D /* FoodCell.swift */; };
 		028FA29C21E8C1D00014868D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29B21E8C1D00014868D /* Food.swift */; };
 		028FA29E21E8C7570014868D /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FA29D21E8C7570014868D /* FoodViewController.swift */; };
-		02B44ED521EC9732000EF36D /* VerticalCardSwiper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */; };
 		02B44EE221EC999E000EF36D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B44EE021EC999E000EF36D /* PlaceCell.swift */; };
 		02B44EE321EC999E000EF36D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B44EE121EC999E000EF36D /* PlaceCell.xib */; };
 /* End PBXBuildFile section */
@@ -100,7 +99,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02177E9E21ECDE06007065FF /* VerticalCardSwiper.framework in Frameworks */,
-				02B44ED521EC9732000EF36D /* VerticalCardSwiper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
