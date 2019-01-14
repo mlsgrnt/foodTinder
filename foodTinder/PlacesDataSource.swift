@@ -22,12 +22,13 @@ class Places {
             return
         }
         
-        request.region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+        request.region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
         
         DispatchQueue.global(qos: .background).async {
             MKLocalSearch(request: request).start { (response: MKLocalSearch.Response?
                 , error: Error?) in
                 response?.mapItems.forEach({ (place) in
+                    print(place)
                     self.places.append(Place(name: place.name ?? "\(query) Place"))
                 })
                 DispatchQueue.main.async {
