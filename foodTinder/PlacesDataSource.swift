@@ -8,7 +8,33 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class Places {
     static var location: CLLocation?
+    var places: [Place] = []
+    
+    func grabPlaces(query: String, completion: @escaping () -> Void) {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        
+        guard let location = Places.location?.coordinate else {
+            return
+        }
+        
+        request.region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+        
+        DispatchQueue.global(qos: .background).async {
+            MKLocalSearch(request: request).start { (response: MKLocalSearch.Response?
+                , error: Error?) in
+                response?.mapItems.forEach({ (place) in
+                    self.places.append(Place(name: place.name ?? "\(query) Place"))
+                })
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
+        }
+
+    }
 }

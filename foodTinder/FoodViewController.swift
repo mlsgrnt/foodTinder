@@ -14,12 +14,13 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     @IBOutlet weak var cardSwiper: VerticalCardSwiper!
     
     var food: Food?
+    var placesDataSource = Places()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        cardSwiper.datasource = self
+        cardSwiper.datasource = nil
         cardSwiper.delegate = self
         
         // register cardcell for storyboard use
@@ -27,8 +28,17 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
 
     }
     
+    private func reloadData() {
+        DispatchQueue.main.async {
+            self.cardSwiper.datasource = self
+            self.cardSwiper.reloadData()
+        }
+    }
+    
     func configure(with food: Food) {
         self.food = food
+        
+        self.placesDataSource.grabPlaces(query: food.name, completion: self.reloadData)
         
         self.navigationItem.title = food.name
     }
@@ -37,13 +47,13 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         
         let placeCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: index) as! PlaceCell
         
-        placeCell.configure()
+        placeCell.configure(with: self.placesDataSource.places[index])
         
         return placeCell
     }
     
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        return 100
+        return self.placesDataSource.places.count
     }
 
     // MARK: - VerticalCardSwiperDelegate

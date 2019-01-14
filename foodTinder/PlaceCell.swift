@@ -38,8 +38,8 @@ class PlaceCell: CardCell {
         }
     }
     
-    func configure() {
-        self.placeNameLabel.text = "\(String(describing: Places.location?.coordinate.longitude))"
+    func configure(with place: Place) {
+        self.placeNameLabel.text = place.name
     }
     
     // MARK: - Shadow

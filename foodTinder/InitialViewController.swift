@@ -19,6 +19,7 @@ class InitialViewController: UICollectionViewController, CLLocationManagerDelega
     ]
 
     var locationManager = CLLocationManager()
+    var places = Places()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,7 @@ class InitialViewController: UICollectionViewController, CLLocationManagerDelega
         if let sender = sender as? UIButton {
             if let foodCell = sender.superview?.superview as? FoodCell {
                 if let foodView = segue.destination as? FoodViewController {
+                    
                     foodView.configure(with: foodCell.food!)
                 }
             }
