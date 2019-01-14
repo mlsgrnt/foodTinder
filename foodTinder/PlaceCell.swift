@@ -8,16 +8,23 @@
 
 import UIKit
 import VerticalCardSwiper
-
+import CoreMotion
 
 class PlaceCell: CardCell {
     
+    let motionManager = CMMotionManager()
+    
     @IBOutlet weak var whiteBox: UIView!
     private weak var shadowView: UIView?
+    
     private let innerMargin = CGFloat(20) // This is the margin of the subview in the xib
+    
+    var shadowConfigured = false
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.shadowConfigured = false
+
     }
     
     override func layoutSubviews() {
@@ -26,7 +33,9 @@ class PlaceCell: CardCell {
         
         super.layoutSubviews()
         
-        configureShadow()
+        if(!shadowConfigured) {
+            configureShadow()
+        }
     }
     
     // MARK: - Shadow
@@ -39,17 +48,20 @@ class PlaceCell: CardCell {
         self.shadowView = shadowView
         
         // Roll/Pitch Dynamic Shadow
-        //        if motionManager.isDeviceMotionAvailable {
-        //            motionManager.deviceMotionUpdateInterval = 0.02
-        //            motionManager.startDeviceMotionUpdates(to: .main, withHandler: { (motion, error) in
-        //                if let motion = motion {
-        //                    let pitch = motion.attitude.pitch * 10 // x-axis
-        //                    let roll = motion.attitude.roll * 10 // y-axis
-        //                    self.applyShadow(width: CGFloat(roll), height: CGFloat(pitch))
-        //                }
-        //            })
-        //        }
-        self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0))
+        if motionManager.isDeviceMotionAvailable && !ProcessInfo.processInfo.isLowPowerModeEnabled {
+                    motionManager.deviceMotionUpdateInterval = 0.02
+                    motionManager.startDeviceMotionUpdates(to: .main, withHandler: { (motion, error) in
+                        if let motion = motion {
+                            let pitch = motion.attitude.pitch * 10 // x-axis
+                            let roll = motion.attitude.roll * 10 // y-axis
+                            self.applyShadow(width: CGFloat(roll), height: CGFloat(pitch))
+                        }
+                    })
+        } else {
+            self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0))
+        }
+        
+        self.shadowConfigured = true
     }
     
     private func applyShadow(width: CGFloat, height: CGFloat) {

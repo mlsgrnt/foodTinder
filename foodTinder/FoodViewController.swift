@@ -36,7 +36,7 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
         
         let placeCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: index) as! PlaceCell
-                
+        
         return placeCell
     }
     
@@ -45,11 +45,11 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     }
 
     // MARK: - VerticalCardSwiperDelegate
+    
     func sizeForItem(verticalCardSwiperView: VerticalCardSwiperView, index: Int) -> CGSize {
         // Allows you to return custom card sizes (optional).
-        return CGSize(width: verticalCardSwiperView.frame.width, height: verticalCardSwiperView.frame.height * 0.85)
+        return CGSize(width: verticalCardSwiperView.frame.width, height: verticalCardSwiperView.frame.height)
     }
-    
     
     /*
     // MARK: - Navigation
