@@ -78,6 +78,10 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         }
     }
     
+    func didSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        self.placesDataSource.places.remove(at: index)
+    }
+    
     
     /*
     // MARK: - Navigation
