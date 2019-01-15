@@ -15,6 +15,8 @@ class PlaceCell: CardCell {
     let motionManager = CMMotionManager()
     
     @IBOutlet weak var placeNameLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var whiteBox: UIView!
     private weak var shadowView: UIView?
     
@@ -25,12 +27,18 @@ class PlaceCell: CardCell {
     override func prepareForReuse() {
         self.shadowConfigured = false
 
+        self.placeNameLabel.text = ""
+        self.distanceLabel.text = ""
+        self.placeImageView.image = nil
+        
         super.prepareForReuse()
     }
     
     override func layoutSubviews() {
         self.layer.cornerRadius = 12
         self.whiteBox.layer.cornerRadius = 12
+        self.placeImageView.layer.cornerRadius = 12
+        self.placeImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Only mask top left and top right
         
         if(!shadowConfigured) {
             configureShadow()
@@ -42,6 +50,21 @@ class PlaceCell: CardCell {
     
     func configure(with place: Place) {
         self.placeNameLabel.text = place.name
+        // This is a temporary hack to get distance showing on the cards but really it should
+        // figure out the travel time
+        self.distanceLabel.text = String(round(place.distance)) + " meters away"
+        
+        //TODO: move to functino/class
+        let task = URLSession.shared.dataTask(with: place.image_url) {
+            (data, response, error) in
+            if(error == nil) {
+                let loadedImage = UIImage(data: data!)
+                DispatchQueue.main.async {
+                    self.placeImageView.image = loadedImage
+                }
+            }
+        }
+        task.resume()
     }
     
     // MARK: - Shadow
