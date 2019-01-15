@@ -23,19 +23,21 @@ class PlaceCell: CardCell {
     var shadowConfigured = false
     
     override func prepareForReuse() {
-        super.prepareForReuse()
         self.shadowConfigured = false
+
+        super.prepareForReuse()
     }
     
     override func layoutSubviews() {
         self.layer.cornerRadius = 12
         self.whiteBox.layer.cornerRadius = 12
         
-        super.layoutSubviews()
-        
         if(!shadowConfigured) {
             configureShadow()
         }
+        
+        super.layoutSubviews()
+        
     }
     
     func configure(with place: Place) {

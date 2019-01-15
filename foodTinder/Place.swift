@@ -10,4 +10,8 @@ import Foundation
 
 struct Place {
     var name: String
+    var image_url: URL
+    var rating: Double
+    var distance: Double
+    var coordinates: [String: Double]
 }
