@@ -67,4 +67,35 @@ class Places {
         }
         
     }
+    
+    func fakeGrabPlaces(query: String, completion: @escaping () -> Void) {
+        let place1 = Place(
+            name: "test",
+            image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
+            rating: 5,
+            distance: 5,
+            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+        )
+        let place2 = Place(
+            name: "test2",
+            image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
+            rating: 5,
+            distance: 5,
+            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+        )
+        let place3 = Place(
+            name: "test3",
+            image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
+            rating: 5,
+            distance: 5,
+            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+        )
+        self.places.append(place1)
+        self.places.append(place2)
+        self.places.append(place3)
+        DispatchQueue.main.async {
+            completion()
+        }
+    }
+
 }
