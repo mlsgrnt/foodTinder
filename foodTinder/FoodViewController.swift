@@ -39,6 +39,11 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
             self.cardSwiper.reloadData()
             
             self.activityIndicator.stopAnimating()
+            
+            // Show error message if nothing is found
+            if(self.placesDataSource.places.count == 0) {
+                self.soldOutLabel.isHidden = false
+            }
         }
     }
     
