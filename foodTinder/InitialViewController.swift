@@ -12,9 +12,9 @@ import CoreLocation
 class InitialViewController: UICollectionViewController, CLLocationManagerDelegate {
     
     var foods = [
-        Food(emoji: "🍔", name: "borger"),
-        Food(emoji: "🥙", name: "döner"),
-        Food(emoji: "🌭", name: "hot dog"),
+        Food(emoji: "🍔", name: "Burger"),
+        Food(emoji: "🥙", name: "Döner"),
+        Food(emoji: "🌭", name: "Hot Dog"),
         Food(emoji: "🍕", name: "Pizza"),
         Food(emoji: "☕️", name: "Coffee")
     ]

@@ -19,7 +19,9 @@ class Places {
             return
         }
         
-        let url = URL(string: "https://api.yelp.com/v3/businesses/search?term=\(query)&latitude=\(location.latitude)&longitude=\(location.longitude)&open_now=true")
+        let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        
+        let url = URL(string: "https://api.yelp.com/v3/businesses/search?term=\(escapedQuery!)&latitude=\(location.latitude)&longitude=\(location.longitude)&open_now=true")
         var request = URLRequest(url: url!)
         request.setValue("Bearer DKBpOix761jB6JYUXRd_GYx_o6UMfdPW26VV9Mom8sroAKCpH1HjD111H22v94KoocJ2stlczJOgWXsbm0HGi1_uABbK2hV21Sz3Kf5WMkmb33fCgVSN2HfilRc9XHYx", forHTTPHeaderField: "Authorization")
         
