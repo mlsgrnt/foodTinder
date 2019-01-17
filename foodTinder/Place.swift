@@ -16,9 +16,11 @@ struct Place {
     var distance: Double
     var coordinates: CLLocationCoordinate2D
     
-    func asDestination() -> MKMapItem {
-        return MKMapItem(placemark: MKPlacemark(
+    func asMapItem() -> MKMapItem {
+        let mapItem = MKMapItem(placemark: MKPlacemark(
             coordinate: self.coordinates
         ))
+        mapItem.name = self.name
+        return mapItem
     }
 }

@@ -67,7 +67,7 @@ class PlaceCell: CardCell {
         //Get travel time
         let travelRequest = MKDirections.Request()
         travelRequest.source = MKMapItem.forCurrentLocation()
-        travelRequest.destination = place.asDestination()
+        travelRequest.destination = place.asMapItem()
         
         let directions = MKDirections(request: travelRequest)
         directions.calculateETA { (etaResponse, err) in
