@@ -495,7 +495,6 @@
 				DEVELOPMENT_TEAM = ZH497CA8QC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Arrow",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = foodTinder/Info.plist;
@@ -519,7 +518,6 @@
 				DEVELOPMENT_TEAM = ZH497CA8QC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Arrow",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = foodTinder/Info.plist;
