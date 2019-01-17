@@ -7,11 +7,18 @@
 //
 
 import Foundation
+import MapKit
 
 struct Place {
     var name: String
     var image_url: URL
     var rating: Double
     var distance: Double
-    var coordinates: [String: Double]
+    var coordinates: CLLocationCoordinate2D
+    
+    func asDestination() -> MKMapItem {
+        return MKMapItem(placemark: MKPlacemark(
+            coordinate: self.coordinates
+        ))
+    }
 }

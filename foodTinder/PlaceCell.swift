@@ -9,6 +9,7 @@
 import UIKit
 import VerticalCardSwiper
 import CoreMotion
+import MapKit
 
 class PlaceCell: CardCell {
     
@@ -50,11 +51,8 @@ class PlaceCell: CardCell {
     
     func configure(with place: Place) {
         self.placeNameLabel.text = place.name
-        // This is a temporary hack to get distance showing on the cards but really it should
-        // figure out the travel time
-        self.distanceLabel.text = String(round(place.distance)) + " meters away"
-        
-        //TODO: move to functino/class
+
+        //TODO: move to functino/class? where should this go
         let task = URLSession.shared.dataTask(with: place.image_url) {
             (data, response, error) in
             if(error == nil) {
@@ -65,6 +63,21 @@ class PlaceCell: CardCell {
             }
         }
         task.resume()
+        
+        //Get travel time
+        let travelRequest = MKDirections.Request()
+        travelRequest.source = MKMapItem.forCurrentLocation()
+        travelRequest.destination = place.asDestination()
+        
+        let directions = MKDirections(request: travelRequest)
+        directions.calculateETA { (etaResponse, err) in
+            guard let eta = etaResponse else {
+                print(err as Any)
+                return
+            }
+            
+            self.distanceLabel.text = "\(Int(round(eta.expectedTravelTime / 60))) minutes away"
+        }
     }
     
     // MARK: - Shadow

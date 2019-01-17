@@ -59,6 +59,8 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         
         let placeCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: index) as! PlaceCell
         
+        //print(index)
+        
         placeCell.configure(with: self.placesDataSource.places[index])
         
         return placeCell

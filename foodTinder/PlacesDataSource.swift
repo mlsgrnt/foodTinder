@@ -43,14 +43,21 @@ class Places {
                         print("oh ok")
                         return
                     }
+                    
+                    let coords = unwrappedPlace["coordinates"] as! [String: Double]
+                    
                     let place = Place(
                         name: unwrappedPlace["name"] as! String,
                         image_url: URL(string: unwrappedPlace["image_url"] as! String)!,
                         rating: unwrappedPlace["rating"] as! Double,
                         distance: unwrappedPlace["distance"] as! Double,
-                        coordinates: unwrappedPlace["coordinates"] as! [String: Double]
+                        coordinates: CLLocationCoordinate2D(latitude: coords["latitude"]!, longitude: coords["longitude"]!)
                     )
                     self.places.append(place)
+                })
+                // Sort by distance
+                self.places = self.places.sorted(by: { (a, b) -> Bool in
+                    return a.distance < b.distance
                 })
                 DispatchQueue.main.async {
                     completion()
