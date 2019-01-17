@@ -16,7 +16,6 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     var food: Food?
     var placesDataSource = Places()
     
-    var cardsSwipedAwayCounter = 0
     @IBOutlet weak var soldOutLabel: UILabel!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -78,8 +77,7 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     }
     
     func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
-        self.cardsSwipedAwayCounter = self.cardsSwipedAwayCounter + 1
-        if(cardsSwipedAwayCounter == self.placesDataSource.places.count) {
+        if(self.placesDataSource.places.count == 1) {
             print("this bitch empty")
             self.soldOutLabel.isHidden = false
         }
