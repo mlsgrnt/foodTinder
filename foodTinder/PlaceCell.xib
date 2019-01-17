@@ -89,6 +89,7 @@
                 <outlet property="distanceLabel" destination="f0p-Xw-ozm" id="Mgv-dx-SuB"/>
                 <outlet property="placeImageView" destination="8dl-b0-cOv" id="A2k-t8-9bg"/>
                 <outlet property="placeNameLabel" destination="Ksm-6V-UcI" id="AwD-Pr-PIW"/>
+                <outlet property="ratingLabel" destination="seU-3u-4pa" id="Mth-6I-BKk"/>
                 <outlet property="whiteBox" destination="Tlp-gF-npS" id="iX6-z2-wRF"/>
             </connections>
             <point key="canvasLocation" x="344" y="266.71664167916043"/>

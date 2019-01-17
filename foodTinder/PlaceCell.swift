@@ -17,6 +17,7 @@ class PlaceCell: CardCell {
     
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var whiteBox: UIView!
     private weak var shadowView: UIView?
@@ -51,6 +52,7 @@ class PlaceCell: CardCell {
     
     func configure(with place: Place) {
         self.placeNameLabel.text = place.name
+        self.ratingLabel.text = place.ratingEmoji()
 
         //TODO: move to functino/class? where should this go
         let task = URLSession.shared.dataTask(with: place.image_url) {

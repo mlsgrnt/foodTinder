@@ -23,4 +23,27 @@ struct Place {
         mapItem.name = self.name
         return mapItem
     }
+    
+    // PATENT PENDING EMOJI-RANK™️ SYSTEM
+    func ratingEmoji() -> String {
+        switch(self.rating) {
+            case 0..<1:
+                return "😷"
+            case 1..<2:
+                return "😨"
+            case 2..<3:
+                return "😕"
+            case 3..<4:
+                return "😐"
+            case 4..<4.5:
+                return "🙂"
+            case 4.5..<4.8:
+                return "😀"
+            case 4.8..<5.1:
+                return "😃"
+            default:
+                return "🤷"
+        }
+        
+    }
 }
