@@ -29,7 +29,7 @@ class PlaceCell: CardCell {
         self.shadowConfigured = false
 
         self.placeNameLabel.text = ""
-        self.distanceLabel.text = ""
+        self.distanceLabel.text = "Few minutes away" //TODO: remove repeated code
         self.placeImageView.image = nil
         
         super.prepareForReuse()
