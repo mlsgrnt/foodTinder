@@ -81,20 +81,16 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
             print("this bitch empty")
             self.soldOutLabel.isHidden = false
         }
-        self.placesDataSource.places.remove(at: index)
-
-    }
-    
-    func didSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        
         // Check for right swipe!
         if(swipeDirection == .Right) {
             let place = self.placesDataSource.places[index]
             
             place.asMapItem().openInMaps(launchOptions: nil)
         }
-        
-    }
-    
+        self.placesDataSource.places.remove(at: index)
+
+    }    
     
     /*
     // MARK: - Navigation
