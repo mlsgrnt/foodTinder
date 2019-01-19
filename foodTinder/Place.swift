@@ -11,8 +11,8 @@ import MapKit
 
 struct Place {
     var name: String
-    var image_url: URL
-    var rating: Double
+    var image_url: URL?
+    var rating: Double?
     var distance: Double
     var coordinates: CLLocationCoordinate2D
     
@@ -26,7 +26,10 @@ struct Place {
     
     // PATENT PENDING EMOJI-RANK™️ SYSTEM
     func ratingEmoji() -> String {
-        switch(self.rating) {
+        guard let rating = self.rating else {
+            return "🤷"
+        }
+        switch(rating) {
             case 0..<1:
                 return "😷"
             case 1..<2:

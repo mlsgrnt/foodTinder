@@ -49,7 +49,7 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     func configure(with food: Food) {
         self.food = food
         
-        self.placesDataSource.grabPlaces(query: food.name, completion: self.reloadData)
+        self.placesDataSource.fakegrabPlaces(query: food.name, completion: self.reloadData)
         
         self.navigationItem.title = food.name
     }

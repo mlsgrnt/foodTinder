@@ -48,13 +48,16 @@ class Places {
                     
                     let coords = unwrappedPlace["coordinates"] as! [String: Double]
                     
-                    let place = Place(
+                    var place = Place(
                         name: unwrappedPlace["name"] as! String,
-                        image_url: URL(string: unwrappedPlace["image_url"] as! String)!,
-                        rating: unwrappedPlace["rating"] as! Double,
+                        image_url: nil,
+                        rating: unwrappedPlace["rating"] as? Double,
                         distance: unwrappedPlace["distance"] as! Double,
                         coordinates: CLLocationCoordinate2D(latitude: coords["latitude"]!, longitude: coords["longitude"]!)
                     )
+                    if let url = unwrappedPlace["image_url"] as? String {
+                        place.image_url = URL(string: url)
+                    }
                     self.places.append(place)
                 })
                 // Sort by distance
@@ -70,7 +73,7 @@ class Places {
         
     }
     
-    func fakeGrabPlaces(query: String, completion: @escaping () -> Void) {
+    func fakegrabPlaces(query: String, completion: @escaping () -> Void) {
         let place1 = Place(
             name: "test",
             image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
@@ -80,7 +83,7 @@ class Places {
         )
         let place2 = Place(
             name: "test2",
-            image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
+            image_url: nil,
             rating: 5,
             distance: 5,
             coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)

@@ -55,16 +55,18 @@ class PlaceCell: CardCell {
         self.ratingLabel.text = place.ratingEmoji()
 
         //TODO: move to functino/class? where should this go
-        let task = URLSession.shared.dataTask(with: place.image_url) {
-            (data, response, error) in
-            if(error == nil) {
-                let loadedImage = UIImage(data: data!)
-                DispatchQueue.main.async {
-                    self.placeImageView.image = loadedImage
+        if let imageUrl = place.image_url {
+            let task = URLSession.shared.dataTask(with: imageUrl) {
+                (data, response, error) in
+                if(error == nil) {
+                    let loadedImage = UIImage(data: data!)
+                    DispatchQueue.main.async {
+                        self.placeImageView.image = loadedImage
+                    }
                 }
             }
+            task.resume()
         }
-        task.resume()
         
         //Get travel time
         let travelRequest = MKDirections.Request()
