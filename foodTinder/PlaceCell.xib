@@ -28,14 +28,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT1-MM-uQm">
                                 <rect key="frame" x="25" y="250" width="258" height="85"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-6V-UcI">
-                                        <rect key="frame" x="0.0" y="15" width="258" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-6V-UcI">
+                                        <rect key="frame" x="0.0" y="15" width="215" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Few minutes away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0p-Xw-ozm">
-                                        <rect key="frame" x="0.0" y="44" width="258" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Few minutes away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0p-Xw-ozm">
+                                        <rect key="frame" x="0.0" y="44" width="215" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -49,12 +49,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="seU-3u-4pa" firstAttribute="leading" secondItem="Ksm-6V-UcI" secondAttribute="trailing" id="B5d-Li-agz"/>
+                                    <constraint firstItem="seU-3u-4pa" firstAttribute="leading" secondItem="f0p-Xw-ozm" secondAttribute="trailing" id="C5f-Wv-ib9"/>
                                     <constraint firstItem="Ksm-6V-UcI" firstAttribute="top" secondItem="gT1-MM-uQm" secondAttribute="top" constant="15" id="C6O-bS-arZ"/>
                                     <constraint firstItem="f0p-Xw-ozm" firstAttribute="leading" secondItem="gT1-MM-uQm" secondAttribute="leading" id="EOd-XS-WsJ"/>
                                     <constraint firstAttribute="height" constant="85" id="FZv-aX-bjx"/>
                                     <constraint firstItem="seU-3u-4pa" firstAttribute="centerY" secondItem="gT1-MM-uQm" secondAttribute="centerY" id="Gfc-me-lGa"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ksm-6V-UcI" secondAttribute="trailing" id="Ghe-Lu-TWd"/>
-                                    <constraint firstAttribute="trailing" secondItem="f0p-Xw-ozm" secondAttribute="trailing" id="HLP-uZ-Hr4"/>
                                     <constraint firstAttribute="trailing" secondItem="seU-3u-4pa" secondAttribute="trailing" id="KTP-Gc-NAf"/>
                                     <constraint firstItem="Ksm-6V-UcI" firstAttribute="leading" secondItem="gT1-MM-uQm" secondAttribute="leading" id="VPj-rw-l6O"/>
                                     <constraint firstItem="f0p-Xw-ozm" firstAttribute="top" secondItem="Ksm-6V-UcI" secondAttribute="bottom" id="cRq-C4-PBi"/>
