@@ -14,7 +14,7 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     @IBOutlet weak var cardSwiper: VerticalCardSwiper!
     
     var food: Food?
-    var placesDataSource = Places()
+    var places = [Place]()
     
     @IBOutlet weak var soldOutLabel: UILabel!
     
@@ -32,7 +32,9 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
 
     }
     
-    private func reloadData() {
+    private func reloadData(places: [Place]) {
+        self.places = places
+        
         DispatchQueue.main.async {
             self.cardSwiper.datasource = self
             self.cardSwiper.reloadData()
@@ -40,7 +42,7 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
             self.activityIndicator.stopAnimating()
             
             // Show error message if nothing is found
-            if(self.placesDataSource.places.count == 0) {
+            if(self.places.count == 0) {
                 self.soldOutLabel.isHidden = false
             }
         }
@@ -49,7 +51,9 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     func configure(with food: Food) {
         self.food = food
         
-        self.placesDataSource.fakegrabPlaces(query: food.name, completion: self.reloadData)
+        let placesDataSource = Places()
+        
+        placesDataSource.grabPlaces(query: food.name, completion: self.reloadData)
         
         self.navigationItem.title = food.name
     }
@@ -60,13 +64,13 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         
         //print(index)
         
-        placeCell.configure(with: self.placesDataSource.places[index])
+        placeCell.configure(with: self.places[index])
         
         return placeCell
     }
     
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        return self.placesDataSource.places.count
+        return self.places.count
     }
 
     // MARK: - VerticalCardSwiperDelegate
@@ -77,18 +81,18 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
     }
     
     func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
-        if(self.placesDataSource.places.count == 1) {
+        if(self.places.count == 1) {
             print("this bitch empty")
             self.soldOutLabel.isHidden = false
         }
         
         // Check for right swipe!
         if(swipeDirection == .Right) {
-            let place = self.placesDataSource.places[index]
+            let place = self.places[index]
             
             place.asMapItem().openInMaps(launchOptions: nil)
         }
-        self.placesDataSource.places.remove(at: index)
+        self.places.remove(at: index)
 
     }    
     

@@ -11,10 +11,10 @@ import CoreLocation
 
 class Places {
     static var location: CLLocation?
-    var places: [Place] = []
     
-    func grabPlaces(query: String, completion: @escaping () -> Void) {
-        
+    func grabPlaces(query: String, completion: @escaping (_ places: [Place]) -> Void) {
+        var places = [Place]()
+
         guard let location = Places.location?.coordinate else {
             return
         }
@@ -58,14 +58,14 @@ class Places {
                     if let url = unwrappedPlace["image_url"] as? String {
                         place.image_url = URL(string: url)
                     }
-                    self.places.append(place)
+                    places.append(place)
                 })
                 // Sort by distance
-                self.places = self.places.sorted(by: { (a, b) -> Bool in
+                places = places.sorted(by: { (a, b) -> Bool in
                     return a.distance < b.distance
                 })
                 DispatchQueue.main.async {
-                    completion()
+                    completion(places)
                 }
             })
             task.resume()
@@ -73,7 +73,9 @@ class Places {
         
     }
     
-    func fakegrabPlaces(query: String, completion: @escaping () -> Void) {
+    func fakegrabPlaces(query: String, completion: @escaping (_ places: [Place]) -> Void) {
+        var places = [Place]()
+
         let place1 = Place(
             name: "test",
             image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
@@ -95,11 +97,11 @@ class Places {
             distance: 5,
             coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
         )
-        self.places.append(place1)
-        self.places.append(place2)
-        self.places.append(place3)
+        places.append(place1)
+        places.append(place2)
+        places.append(place3)
         DispatchQueue.main.async {
-            completion()
+            completion(places)
         }
     }
 
