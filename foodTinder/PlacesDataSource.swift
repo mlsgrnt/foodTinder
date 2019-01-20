@@ -53,7 +53,8 @@ class Places {
                         image_url: nil,
                         rating: unwrappedPlace["rating"] as? Double,
                         distance: unwrappedPlace["distance"] as! Double,
-                        coordinates: CLLocationCoordinate2D(latitude: coords["latitude"]!, longitude: coords["longitude"]!)
+                        coordinates: CLLocationCoordinate2D(latitude: coords["latitude"]!, longitude: coords["longitude"]!),
+                        mapItem: nil
                     )
                     if let url = unwrappedPlace["image_url"] as? String {
                         place.image_url = URL(string: url)
@@ -81,21 +82,24 @@ class Places {
             image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
             rating: 5,
             distance: 5,
-            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
+            mapItem: nil
         )
         let place2 = Place(
             name: "test2",
             image_url: nil,
             rating: 5,
             distance: 5,
-            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
+            mapItem: nil
         )
         let place3 = Place(
             name: "test3",
             image_url: URL(string: "https://user-images.githubusercontent.com/7799382/30356431-dbba9920-97ed-11e7-8f2b-a5b5ba0e7682.png")!,
             rating: 5,
             distance: 5,
-            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+            coordinates: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
+            mapItem: nil
         )
         places.append(place1)
         places.append(place2)

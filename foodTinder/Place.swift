@@ -15,12 +15,17 @@ struct Place {
     var rating: Double?
     var distance: Double
     var coordinates: CLLocationCoordinate2D
+    var mapItem: MKMapItem?
     
     func asMapItem() -> MKMapItem {
-        let mapItem = MKMapItem(placemark: MKPlacemark(
+        let lousyMapItem = MKMapItem(placemark: MKPlacemark(
             coordinate: self.coordinates
         ))
-        mapItem.name = self.name
+        lousyMapItem.name = self.name
+        
+        guard let mapItem = self.mapItem else {
+            return lousyMapItem
+        }
         return mapItem
     }
     
@@ -48,5 +53,19 @@ struct Place {
                 return "🤷"
         }
         
+    }
+    
+    func findDetailedMapItem(completion: @escaping (_: MKMapItem) -> Void) -> Void {
+        let request = MKLocalSearch.Request()
+        request.region = MKCoordinateRegion(center: self.coordinates, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        request.naturalLanguageQuery = self.name
+        
+        MKLocalSearch(request: request).start { (response, error) in
+            guard error == nil else { return }
+            guard let response = response else { return }
+            guard response.mapItems.count > 0 else { return }
+            
+            completion(response.mapItems[0])
+        }
     }
 }

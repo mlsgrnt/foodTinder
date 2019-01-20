@@ -65,6 +65,9 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         //print(index)
         
         placeCell.configure(with: self.places[index])
+        self.places[index].findDetailedMapItem { (mapItem) in
+            self.places[index].mapItem = mapItem
+        }
         
         return placeCell
     }
