@@ -17,7 +17,7 @@ class InitialViewController: UICollectionViewController, CLLocationManagerDelega
         Food(emoji: "🍕", name: "Pizza"),
         Food(emoji: "☕️", name: "Coffee"),
         Food(emoji: "🥞", name: "Pancakes"),
-        Food(emoji: "🥪", name: "Sandwhich"),
+        Food(emoji: "🥪", name: "Sandwiches"),
         Food(emoji: "🥡", name: "Chinese Food"),
         Food(emoji: "🍣", name: "Sushi"),
         Food(emoji: "🥖", name: "Bakery")
