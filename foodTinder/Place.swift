@@ -15,6 +15,7 @@ struct Place {
     var rating: Double?
     var distance: Double
     var coordinates: CLLocationCoordinate2D
+    var zipCode: String?
     var mapItem: MKMapItem?
     
     func asMapItem() -> MKMapItem {
@@ -56,9 +57,15 @@ struct Place {
     }
     
     func findDetailedMapItem(completion: @escaping (_: MKMapItem) -> Void) -> Void {
+        // "Search" for the place we're looking for
         let request = MKLocalSearch.Request()
         request.region = MKCoordinateRegion(center: self.coordinates, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         request.naturalLanguageQuery = self.name
+        
+        // Add the zip code of the location to ensure we get the correct one
+        if let zipCode = self.zipCode {
+            request.naturalLanguageQuery = request.naturalLanguageQuery! + " " + zipCode
+        }
         
         MKLocalSearch(request: request).start { (response, error) in
             guard error == nil else { return }
