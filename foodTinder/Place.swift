@@ -72,7 +72,25 @@ struct Place {
             guard let response = response else { return }
             guard response.mapItems.count > 0 else { return }
             
-            completion(response.mapItems[0])
+            let nearestMapItem = response.mapItems.sorted(by: { (lhs, rhs) -> Bool in
+                if let lhs = lhs.placemark.region as? CLCircularRegion, let rhs = rhs.placemark.region as? CLCircularRegion {
+                    return lhs.distanceFrom(request.region) > rhs.distanceFrom(request.region)
+                }
+                    return false
+            })[0]
+            
+            completion(nearestMapItem)
         }
+    }
+}
+
+extension CLCircularRegion {
+    // This is not the true distance, but we don't care about the true distance, we just need
+    // a comparable value
+    public func distanceFrom(_ other: MKCoordinateRegion) -> Double {
+        let latDifference = other.center.latitude - self.center.latitude
+        let longDifference = other.center.longitude - self.center.longitude
+        
+        return abs(latDifference + longDifference)
     }
 }
