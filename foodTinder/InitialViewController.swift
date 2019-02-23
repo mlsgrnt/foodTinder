@@ -13,11 +13,14 @@ class InitialViewController: UICollectionViewController, CLLocationManagerDelega
     
     var foods = [
         Food(emoji: "🍔", name: "Burger"),
-        Food(emoji: "🥙", name: "Döner"),
-        Food(emoji: "🌭", name: "Hot Dog"),
+        Food(emoji: "🥙", name: "Kebab"),
         Food(emoji: "🍕", name: "Pizza"),
         Food(emoji: "☕️", name: "Coffee"),
-        Food(emoji: "🥞", name: "Pancakes")
+        Food(emoji: "🥞", name: "Pancakes"),
+        Food(emoji: "🥪", name: "Sandwhich"),
+        Food(emoji: "🥡", name: "Chinese Food"),
+        Food(emoji: "🍣", name: "Sushi"),
+        Food(emoji: "🥖", name: "Bakery")
     ]
 
     var locationManager = CLLocationManager()
