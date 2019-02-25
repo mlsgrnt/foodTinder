@@ -62,8 +62,6 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         
         let placeCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: index) as! PlaceCell
         
-        //print(index)
-        
         placeCell.configure(with: self.places[index])
         self.places[index].findDetailedMapItem { (mapItem) in
             self.places[index].mapItem = mapItem
@@ -98,15 +96,5 @@ class FoodViewController: UIViewController, VerticalCardSwiperDatasource, Vertic
         self.places.remove(at: index)
 
     }    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

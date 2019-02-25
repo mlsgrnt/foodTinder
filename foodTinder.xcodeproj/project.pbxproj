@@ -141,14 +141,14 @@
 				028FA27921E8BE240014868D /* AppDelegate.swift */,
 				028FA27B21E8BE240014868D /* InitialViewController.swift */,
 				028FA29B21E8C1D00014868D /* Food.swift */,
-				028FA27D21E8BE240014868D /* Main.storyboard */,
 				028FA29D21E8C7570014868D /* FoodViewController.swift */,
 				028FA29921E8C0D70014868D /* FoodCell.swift */,
 				02B44EE021EC999E000EF36D /* PlaceCell.swift */,
 				02219D3521ECF0C6004C7AB0 /* PlacesDataSource.swift */,
 				02219D3721ECF52D004C7AB0 /* Place.swift */,
-				02B44EE121EC999E000EF36D /* PlaceCell.xib */,
 				028FA28021E8BE250014868D /* Assets.xcassets */,
+				028FA27D21E8BE240014868D /* Main.storyboard */,
+				02B44EE121EC999E000EF36D /* PlaceCell.xib */,
 				028FA28221E8BE250014868D /* LaunchScreen.storyboard */,
 				028FA28521E8BE250014868D /* Info.plist */,
 			);
@@ -177,7 +177,7 @@
 			children = (
 				02B44ED021EC96E0000EF36D /* Example.app */,
 				02B44ED221EC96E0000EF36D /* VerticalCardSwiper.framework */,
-				02B44ED421EC96E0000EF36D /* VerticalCardSwiperUITests.xctest */,
+				02B44ED421EC96E0000EF36D /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,10 +281,10 @@
 			remoteRef = 02B44ED121EC96E0000EF36D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		02B44ED421EC96E0000EF36D /* VerticalCardSwiperUITests.xctest */ = {
+		02B44ED421EC96E0000EF36D /* UITests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = VerticalCardSwiperUITests.xctest;
+			path = UITests.xctest;
 			remoteRef = 02B44ED321EC96E0000EF36D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
